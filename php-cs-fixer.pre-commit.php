@@ -17,7 +17,6 @@
  *
  */
 
-
 /**
  * Check php-cs-fixer is available and throw a warning if it's not
  */
@@ -28,13 +27,13 @@ $phpCsFixerIsAvailable = !$return;
 
 if (!$phpCsFixerIsAvailable) {
     $redir = ' 1>&2';
-    passthru('echo Warning: php-cs-fixer is not installed or reachable by PATH.' . $redir);
-    passthru('echo ""' . $redir);
-    passthru('echo for installation instructions, please see:' . $redir);
-    passthru('echo \'http://cs.sensiolabs.org/#installation\'' . $redir);
-    passthru('echo ' . $redir);
-    passthru('echo this commit will now continue without psr2 fixing.' . $redir);
-    passthru('echo ' . $redir);
+    passthru('echo Warning: php-cs-fixer is not installed or reachable by PATH.'.$redir);
+    passthru('echo ""'.$redir);
+    passthru('echo for installation instructions, please see:'.$redir);
+    passthru('echo \'http://cs.sensiolabs.org/#installation\''.$redir);
+    passthru('echo '.$redir);
+    passthru('echo this commit will now continue without psr2 fixing.'.$redir);
+    passthru('echo '.$redir);
 }
 
 /**
@@ -53,7 +52,7 @@ foreach ($output as $file) {
          * Check for error
          */
         $lint_output = array();
-        exec("php -l " . escapeshellarg($fileName), $lint_output, $return);
+        exec("php -l ".escapeshellarg($fileName), $lint_output, $return);
 
         if ($return == 0) {
             /**
@@ -62,8 +61,7 @@ foreach ($output as $file) {
             if (!$phpCsFixerIsAvailable) {
                 continue;
             }
-            exec("php-cs-fixer fix {$fileName} --level=all; git add {$fileName}");
-
+            exec("php-cs-fixer fix {$fileName}; git add {$fileName}");
         } else {
             echo implode("\n", $lint_output), "\n";
             exit(1);
