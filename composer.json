@@ -1,0 +1,17 @@
+{
+    "name": "tacone/psr-police",
+    "description": "Installs php-cs-fixer git hook automatically using a composer script",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "tacone",
+            "email": "tacone@users.noreply.github.com"
+        }
+    ],
+    "require": {
+
+    },
+    "bin": [
+        "phpunit"
+    ]
+}
