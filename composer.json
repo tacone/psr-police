@@ -11,7 +11,9 @@
     "require": {
 
     },
-    "bin": [
-        "phpunit"
-    ]
+    "scripts": {
+        "post-update-cmd": "php install.php",
+        "post-install-cmd": "php install.php",
+        "post-create-project-cmd": "php install.php"
+    }
 }
