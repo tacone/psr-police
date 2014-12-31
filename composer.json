@@ -1,6 +1,6 @@
 {
     "name": "tacone/psr-police",
-    "description": "Installs php-cs-fixer git hook automatically using a composer script",
+    "description": "Install php-cs-fixer git hook automatically using a script",
     "license": "MIT",
     "authors": [
         {
@@ -11,9 +11,12 @@
     "require": {
 
     },
+    "bin":  [
+      "psr-police"
+    ],
     "scripts": {
-        "post-update-cmd": "php install.php",
-        "post-install-cmd": "php install.php",
-        "post-create-project-cmd": "php install.php"
+        "post-update-cmd": "php psr-police",
+        "post-install-cmd": "php psr-police",
+        "post-create-project-cmd": "php psr-police"
     }
 }
