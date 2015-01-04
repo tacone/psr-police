@@ -12,8 +12,12 @@ if (!file_exists($git)) {
 }
 
 if (file_exists($precommit)) {
-    // pre commit already in place, skipping
-    die;
+    // pre commit already in place, abort
+    passthru('echo pre commit already in place, to update it run:'.$redir);
+    passthru('echo '.$redir);
+    passthru('echo rm '. $git.'/pre-commit'.$redir);
+    passthru('echo psr-police'.$redir);
+    exit(1);
 }
 
 passthru('echo '.$redir);
